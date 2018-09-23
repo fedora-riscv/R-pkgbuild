@@ -2,7 +2,7 @@
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          1.0.0
+Version:          1.0.1
 Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
@@ -77,5 +77,8 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 
 %changelog
+* Sat Sep 22 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.1-1
+- Update to latest version
+
 * Tue Jul 31 2018 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.0-1
 - initial package for Fedora
