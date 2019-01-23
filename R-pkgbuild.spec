@@ -7,7 +7,7 @@ Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
-URL:              https://cran.r-project.org/web/packages/%{packname}/index.html
+URL:              https://CRAN.R-project.org/package=%{packname}
 Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{version}.tar.gz
 
 # Here's the R view of the dependencies world:
