@@ -2,8 +2,8 @@
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          1.0.1
-Release:          2%{?dist}
+Version:          1.0.2
+Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -12,7 +12,7 @@ Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{version}.
 
 # Here's the R view of the dependencies world:
 # Depends:
-# Imports:   R-callr >= 2.0.0, R-crayon, R-desc, R-R6, R-rprojroot, R-withr >= 2.1.2
+# Imports:   R-callr >= 2.0.0, R-cli, R-crayon, R-desc, R-prettyunits, R-R6, R-rprojroot, R-withr >= 2.1.2
 # Suggests:  R-Rcpp, R-testthat, R-covr
 # LinkingTo:
 # Enhances:
@@ -20,8 +20,10 @@ Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{version}.
 BuildArch:        noarch
 Requires:         R-core
 Requires:         R-callr >= 2.0.0
+Requires:         R-cli
 Requires:         R-crayon
 Requires:         R-desc
+Requires:         R-prettyunits
 Requires:         R-R6
 Requires:         R-rprojroot
 Requires:         R-withr >= 2.1.2
@@ -29,9 +31,11 @@ Suggests:         R-Rcpp
 BuildRequires:    R-devel
 BuildRequires:    tex(latex)
 BuildRequires:    R-callr >= 2.0.0
+BuildRequires:    R-cli
 BuildRequires:    R-crayon
 BuildRequires:    R-desc
 BuildRequires:    R-R6
+BuildRequires:    R-prettyunits
 BuildRequires:    R-rprojroot
 BuildRequires:    R-withr >= 2.1.2
 BuildRequires:    R-Rcpp
@@ -77,6 +81,9 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 
 %changelog
+* Sun Feb 10 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.2-1
+- Update to latest version
+
 * Thu Jan 31 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
