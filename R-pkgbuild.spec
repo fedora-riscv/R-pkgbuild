@@ -3,7 +3,7 @@
 
 Name:             R-%{packname}
 Version:          1.0.2
-Release:          1%{?dist}
+Release:          2%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -65,7 +65,7 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 
 %check
-%{_bindir}/R CMD check %{packname}
+NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %files
@@ -81,6 +81,9 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 
 %changelog
+* Wed Mar 06 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.2-2
+- Enable more tests
+
 * Sun Feb 10 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.2-1
 - Update to latest version
 
