@@ -2,8 +2,8 @@
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          1.0.2
-Release:          2%{?dist}
+Version:          1.0.3
+Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -34,8 +34,8 @@ BuildRequires:    R-callr >= 2.0.0
 BuildRequires:    R-cli
 BuildRequires:    R-crayon
 BuildRequires:    R-desc
-BuildRequires:    R-R6
 BuildRequires:    R-prettyunits
+BuildRequires:    R-R6
 BuildRequires:    R-rprojroot
 BuildRequires:    R-withr >= 2.1.2
 BuildRequires:    R-Rcpp
@@ -81,6 +81,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Wed Mar 20 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.3-1
+- Update to latest version
+
 * Wed Mar 06 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.2-2
 - Enable more tests
 
