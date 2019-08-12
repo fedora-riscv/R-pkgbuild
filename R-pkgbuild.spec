@@ -3,7 +3,7 @@
 
 Name:             R-%{packname}
 Version:          1.0.3
-Release:          2%{?dist}
+Release:          3%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -18,16 +18,6 @@ Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{version}.
 # Enhances:
 
 BuildArch:        noarch
-Requires:         R-core
-Requires:         R-callr >= 2.0.0
-Requires:         R-cli
-Requires:         R-crayon
-Requires:         R-desc
-Requires:         R-prettyunits
-Requires:         R-R6
-Requires:         R-rprojroot
-Requires:         R-withr >= 2.1.2
-Suggests:         R-Rcpp
 BuildRequires:    R-devel
 BuildRequires:    tex(latex)
 BuildRequires:    R-callr >= 2.0.0
@@ -81,6 +71,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Sun Aug 11 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.3-3
+- Remove explicit dependencies provided by automatic dependency generator
+
 * Wed Jul 24 2019 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
