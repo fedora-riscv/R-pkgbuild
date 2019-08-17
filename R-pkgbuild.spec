@@ -2,7 +2,7 @@
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          1.0.3
+Version:          1.0.4
 Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
@@ -12,14 +12,14 @@ Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{version}.
 
 # Here's the R view of the dependencies world:
 # Depends:
-# Imports:   R-callr >= 2.0.0, R-cli, R-crayon, R-desc, R-prettyunits, R-R6, R-rprojroot, R-withr >= 2.1.2
+# Imports:   R-callr >= 3.2.0, R-cli, R-crayon, R-desc, R-prettyunits, R-R6, R-rprojroot, R-withr >= 2.1.2
 # Suggests:  R-Rcpp, R-testthat, R-covr
 # LinkingTo:
 # Enhances:
 
 BuildArch:        noarch
 Requires:         R-core
-Requires:         R-callr >= 2.0.0
+Requires:         R-callr >= 3.2.0
 Requires:         R-cli
 Requires:         R-crayon
 Requires:         R-desc
@@ -30,7 +30,7 @@ Requires:         R-withr >= 2.1.2
 Suggests:         R-Rcpp
 BuildRequires:    R-devel
 BuildRequires:    tex(latex)
-BuildRequires:    R-callr >= 2.0.0
+BuildRequires:    R-callr >= 3.2.0
 BuildRequires:    R-cli
 BuildRequires:    R-crayon
 BuildRequires:    R-desc
@@ -81,6 +81,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Sat Aug 17 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.4-1
+- Update to latest version
+
 * Wed Mar 20 2019 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.3-1
 - Update to latest version
 
