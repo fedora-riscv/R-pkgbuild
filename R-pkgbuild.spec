@@ -1,14 +1,15 @@
-%global packname  pkgbuild
+%global packname pkgbuild
+%global packver  1.0.8
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          1.0.6
-Release:          2%{?dist}
+Version:          1.0.8
+Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
 URL:              https://CRAN.R-project.org/package=%{packname}
-Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{version}.tar.gz
+Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{packver}.tar.gz
 
 # Here's the R view of the dependencies world:
 # Depends:
@@ -71,6 +72,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Thu May 21 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.8-1
+- Update to latest version
+
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.0.6-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
