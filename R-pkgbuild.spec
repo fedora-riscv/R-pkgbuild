@@ -1,10 +1,12 @@
+%bcond_with check
+
 %global packname pkgbuild
 %global packver  1.0.8
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
 Version:          1.0.8
-Release:          1%{?dist}
+Release:          2%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -29,8 +31,10 @@ BuildRequires:    R-prettyunits
 BuildRequires:    R-R6
 BuildRequires:    R-rprojroot
 BuildRequires:    R-withr >= 2.1.2
+%if %{with check}
 BuildRequires:    R-Rcpp
 BuildRequires:    R-testthat
+%endif
 
 %description
 Provides functions used to build R packages. Locates compilers needed to
@@ -56,8 +60,9 @@ rm -f %{buildroot}%{rlibdir}/R.css
 
 
 %check
+%if %{with check}
 NOT_CRAN=true %{_bindir}/R CMD check %{packname}
-
+%endif
 
 %files
 %dir %{rlibdir}/%{packname}
@@ -72,6 +77,10 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Thu Jun  4 2020 Tom Callaway <spot@fedoraproject.org> - 1.0.8-2
+- rebuild for R 4
+- conditionalize check to break testthat loop
+
 * Thu May 21 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.0.8-1
 - Update to latest version
 
