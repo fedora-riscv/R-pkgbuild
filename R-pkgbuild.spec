@@ -1,14 +1,12 @@
-%bcond_with check
+%bcond_without check
 
 %global packname pkgbuild
-%global packver  1.1.0
+%global packver  1.2.0
 %global rlibdir  %{_datadir}/R/library
 
-%global __suggests_exclude ^R\\((cpp11)\\)
-
 Name:             R-%{packname}
-Version:          1.1.0
-Release:          2%{?dist}
+Version:          1.2.0
+Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -73,6 +71,7 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 %doc %{rlibdir}/%{packname}/html
 %{rlibdir}/%{packname}/DESCRIPTION
 %doc %{rlibdir}/%{packname}/NEWS.md
+%license %{rlibdir}/%{packname}/LICENSE
 %{rlibdir}/%{packname}/INDEX
 %{rlibdir}/%{packname}/NAMESPACE
 %{rlibdir}/%{packname}/Meta
@@ -81,6 +80,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Wed Dec 23 2020 Elliott Sales de Andrade <quantum.analyst@gmail.com> - 1.2.0-1
+- Update to latest version (#1908163)
+
 * Mon Jul 27 2020 Fedora Release Engineering <releng@fedoraproject.org> - 1.1.0-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_33_Mass_Rebuild
 
