@@ -6,7 +6,7 @@
 
 Name:             R-%{packname}
 Version:          1.2.0
-Release:          3%{?dist}
+Release:          4%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -80,6 +80,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Wed Jul 21 2021 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.0-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Mon Jun 14 2021 Tom Callaway <spot@fedoraproject.org> - 1.2.0-3
 - Rebuilt for R 4.1.0
 
