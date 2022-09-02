@@ -1,12 +1,12 @@
 %bcond_without check
 
 %global packname pkgbuild
-%global packver  1.2.0
+%global packver  1.3.1
 %global rlibdir  %{_datadir}/R/library
 
 Name:             R-%{packname}
-Version:          1.2.0
-Release:          6%{?dist}
+Version:          %{packver}
+Release:          1%{?dist}
 Summary:          Find Tools Needed to Build R Packages
 
 License:          GPLv3
@@ -15,7 +15,7 @@ Source0:          https://cran.r-project.org/src/contrib/%{packname}_%{packver}.
 
 # Here's the R view of the dependencies world:
 # Depends:
-# Imports:   R-callr >= 3.2.0, R-cli, R-crayon, R-desc, R-prettyunits, R-R6, R-rprojroot, R-withr >= 2.1.2
+# Imports:   R-callr >= 3.2.0, R-cli, R-crayon, R-desc, R-prettyunits, R-R6, R-rprojroot, R-withr >= 2.3.0
 # Suggests:  R-Rcpp, R-cpp11, R-testthat, R-covr
 # LinkingTo:
 # Enhances:
@@ -30,7 +30,7 @@ BuildRequires:    R-desc
 BuildRequires:    R-prettyunits
 BuildRequires:    R-R6
 BuildRequires:    R-rprojroot
-BuildRequires:    R-withr >= 2.1.2
+BuildRequires:    R-withr >= 2.3.0
 %if %{with check}
 BuildRequires:    R-Rcpp
 BuildRequires:    R-cpp11
@@ -80,6 +80,10 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Thu Sep  1 2022 Tom Callaway <spot@fedoraproject.org> - 1.3.1-1
+- update to 1.3.1
+- rebuild for R 4.2.1
+
 * Wed Jul 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 1.2.0-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
