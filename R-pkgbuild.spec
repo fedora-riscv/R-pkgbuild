@@ -1,3 +1,8 @@
+%bcond_without bootstrap
+%if %{with bootstrap}
+%global _without_check 1
+%endif
+
 %bcond_without check
 
 %global packname pkgbuild
@@ -80,6 +85,9 @@ NOT_CRAN=true %{_bindir}/R CMD check %{packname}
 
 
 %changelog
+* Mon Jun 12 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 1.3.1-2~bootstrap
+- Bootstrap for Feodra 38 riscv64 rebuild.
+
 * Wed Jan 18 2023 Fedora Release Engineering <releng@fedoraproject.org> - 1.3.1-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_38_Mass_Rebuild
 
